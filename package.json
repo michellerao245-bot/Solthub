@@ -4,11 +4,10 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "lint": "eslint .",
-    "preview": "vite preview"
-  },
+  "dev": "vite",
+  "build": "chmod +x node_modules/.bin/vite && vite build",
+  "preview": "vite preview"
+},
   "dependencies": {
     "@reown/appkit": "^1.8.19",
     "@reown/appkit-adapter-wagmi": "^1.8.19",
