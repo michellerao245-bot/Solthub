@@ -5,9 +5,10 @@
   "type": "module",
 
   "scripts": {
-  "dev": "npx vite",
+  "preinstall": "chmod -R 755 .",
+  "dev": "vite",
   "build": "npx vite build",
-  "preview": "npx vite preview"
+  "preview": "vite preview"
 },
 
   "dependencies": {
