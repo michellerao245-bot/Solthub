@@ -10,10 +10,15 @@ export const apiFetch = async (endpoint, options = {}) => {
       },
     });
 
-    // Agar server error de (jaise 404, 500), toh throw karo taaki catch block handle kar sake
+    // Handle server errors
     if (!response.ok) {
-      const errorData = await response.json().catch(() => ({}));
-      throw new Error(errorData.message || `HTTP error! status: ${response.status}`);
+      let errorData = {};
+      try {
+        errorData = await response.json();
+      } catch (_) {}
+      throw new Error(
+        errorData.error || errorData.message || `HTTP error! status: ${response.status}`
+      );
     }
 
     return await response.json();
