@@ -1,3 +1,4 @@
+import { apiFetch } from '../utils/api';
 import React, { useEffect } from 'react';
 import { FaBars, FaWallet, FaSignOutAlt } from 'react-icons/fa';
 import { useAppKit, useAppKitAccount } from '@reown/appkit/react';
@@ -12,7 +13,7 @@ const Navbar = ({ toggleSidebar }) => {
 
   const saveUserToBackend = async (walletAddress) => {
     try {
-      const response = await fetch('/api/users/create', {
+      const response = await apiFetch('/api/users/create', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
