@@ -1,3 +1,4 @@
+import { apiFetch } from "../utils/api";
 import React, { useState, useEffect } from "react";
 import { ethers } from "ethers";
 import "./Presale.css";
@@ -18,23 +19,43 @@ const Presale = () => {
     }
   }, [bnbAmount]);
 
-  const handleBuy = async () => {
-    if (!bnbAmount || bnbAmount <= 0) {
-        alert("Please enter a valid BNB amount");
-        return;
-    }
-    try {
-      const provider = new ethers.BrowserProvider(window.ethereum);
-      const signer = await provider.getSigner();
-      const tx = await signer.sendTransaction({
-        to: PRESALE_ADDRESS,
-        value: ethers.parseEther(bnbAmount),
-      });
-      alert("Transaction Submitted!");
-    } catch (err) {
-      alert("Transaction Failed!");
-    }
-  };
+ const handleBuy = async () => {
+  if (!bnbAmount || bnbAmount <= 0) {
+    alert("Please enter a valid BNB amount");
+    return;
+  }
+
+  try {
+    const provider = new ethers.BrowserProvider(window.ethereum);
+    const signer = await provider.getSigner();
+
+    const tx = await signer.sendTransaction({
+      to: PRESALE_ADDRESS,
+      value: ethers.parseEther(bnbAmount),
+    });
+
+    alert("Transaction Submitted!");
+
+    // 🔥 WAIT FOR CONFIRMATION (important)
+    const receipt = await tx.wait();
+
+    // 💥 BACKEND CALL (THIS IS THE IMPORTANT PART)
+    const result = await apiFetch("/api/presale/buy", {
+      method: "POST",
+      body: JSON.stringify({
+        wallet: await signer.getAddress(),
+        amount: bnbAmount,
+        txHash: receipt.hash,
+      }),
+    });
+
+    console.log("Backend Response:", result);
+
+  } catch (err) {
+    console.error(err);
+    alert("Transaction Failed!");
+  }
+};
 
   return (
     <div className="presale-container">
