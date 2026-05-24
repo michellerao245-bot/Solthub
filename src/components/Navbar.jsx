@@ -11,26 +11,29 @@ const Navbar = ({ toggleSidebar }) => {
 
   const shortAddress = address ? `${address.slice(0, 6)}...${address.slice(-4)}` : '';
 
-  const saveUserToBackend = async (walletAddress) => {
+  const saveUserToBackend = async (walletAddress) => { 
     try {
-      const response = await apiFetch('/api/users/create', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          wallet: walletAddress,
-          username: 'Guest',
-        }),
-      });
-      const result = await response.json();
-      console.log("Backend Response:", result);
-    } catch (error) {
-      console.error("Error:", error);
-    }
-  };
 
-  useEffect(() => {
+const result = await apiFetch('/api/users/create', { 
+  method: 'POST', 
+  headers: { 
+    'Content-Type': 'application/json', 
+  }, 
+  body: JSON.stringify({ 
+    wallet: walletAddress, 
+    username: 'Guest', 
+  }), 
+}); 
+console.log("Backend Response:", result); 
+
+} catch (error) {
+
+console.error("Error:", error); 
+
+} 
+};
+  
+useEffect(() => {
     if (isConnected && address) {
       saveUserToBackend(address);
     }
