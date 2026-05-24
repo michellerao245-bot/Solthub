@@ -3,7 +3,6 @@ import { FaBars, FaWallet, FaSignOutAlt } from 'react-icons/fa';
 import { useAppKit, useAppKitAccount } from '@reown/appkit/react';
 import { useDisconnect } from 'wagmi';
 
-// ✅ Yahan se 'Navbar' component shuru ho raha hai
 const Navbar = ({ toggleSidebar }) => {
   const { open } = useAppKit();
   const { address, isConnected } = useAppKitAccount();
@@ -13,10 +12,15 @@ const Navbar = ({ toggleSidebar }) => {
 
   const saveUserToBackend = async (walletAddress) => {
     try {
-      const response = await fetch('https://ecobackend-two.vercel.app/api/users/create', {
+      const response = await fetch('/api/users/create', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ wallet: walletAddress, username: "Guest" })
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          wallet: walletAddress,
+          username: 'Guest',
+        }),
       });
       const result = await response.json();
       console.log("Backend Response:", result);
@@ -40,7 +44,9 @@ const Navbar = ({ toggleSidebar }) => {
 
   return (
     <nav className="fixed top-0 left-0 right-0 h-16 bg-[#0b1426] z-40 flex items-center justify-between px-6">
-      <button onClick={toggleSidebar} className="p-2 text-cyan-400"><FaBars size={20} /></button>
+      <button onClick={toggleSidebar} className="p-2 text-cyan-400">
+        <FaBars size={20} />
+      </button>
       <div className="flex items-center gap-3">
         <button onClick={handleConnect} className="px-5 py-2 bg-cyan-500 text-black font-bold rounded-full text-sm">
           {isConnected ? shortAddress : 'Connect Wallet'}
@@ -54,6 +60,5 @@ const Navbar = ({ toggleSidebar }) => {
     </nav>
   );
 };
-// ✅ Yahan component khatam aur export ho raha hai
 
 export default Navbar;
