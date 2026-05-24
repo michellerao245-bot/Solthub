@@ -8,7 +8,7 @@ const Navbar = ({ toggleSidebar }) => {
   const { open } = useAppKit();
   const { address, isConnected } = useAppKitAccount();
   const { disconnect } = useDisconnect();
-
+const ref = new URLSearchParams(window.location.search).get("ref");
   const shortAddress = address ? `${address.slice(0, 6)}...${address.slice(-4)}` : '';
 
   const saveUserToBackend = async (walletAddress) => { 
