@@ -1,20 +1,31 @@
+import { useEffect } from "react";
 import React, { useState } from 'react';  
 import { useNavigate } from 'react-router-dom';  
 import { useAccount } from 'wagmi'; 
 import { FaGift, FaUsers, FaChartLine, FaWallet, FaLock, FaRocket } from 'react-icons/fa';
 
-const Dashboard = () => {  
-  const { address: userAddress, isConnected } = useAccount(); 
-  const navigate = useNavigate();  
-  const [copyText, setCopyText] = useState("Copy Link");  
+const Dashboard = () => {   
+  const { address: userAddress, isConnected } = useAccount();  
+  const navigate = useNavigate();   
+  const [copyText, setCopyText] = useState("Copy Link");   
 
-  const handleCopy = () => {  
-    if(!userAddress) return; 
-    const link = `${window.location.origin}/?ref=${userAddress}`;  
-    navigator.clipboard.writeText(link);  
-    setCopyText("Copied! ✅");  
-    setTimeout(() => setCopyText("Copy Link"), 2000);  
-  };  
+  // 🔥 ADD THIS (capture referral from URL)
+  const ref = new URLSearchParams(window.location.search).get("ref");
+
+  const handleCopy = () => {   
+    if(!userAddress) return;  
+    const link = `${window.location.origin}/?ref=${userAddress}`;   
+    navigator.clipboard.writeText(link);   
+    setCopyText("Copied! ✅");   
+    setTimeout(() => setCopyText("Copy Link"), 2000);   
+  };
+
+  // 🔥 OPTIONAL: log referral (for debugging)
+  useEffect(() => {
+    if (ref) {
+      console.log("Referral detected:", ref);
+    }
+  }, [ref]);
 
   return (  
     <div className="dashboard-wrapper" style={{ padding: '60px 40px', width: '100%', minHeight: '100vh', background: '#0b1426', color: '#fff' }}>  
