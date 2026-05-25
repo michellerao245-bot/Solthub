@@ -16,7 +16,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
     if (isLocalEnv) {  
       window.location.href = `http://${currentHost}:5173/`;  
     } else {  
-      window.location.href = 'https://soltchain.vercel.app/';   
+      window.location.href = 'https://ecocreator.vercel.app/';   
     }  
   };  
   
