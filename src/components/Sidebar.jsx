@@ -19,7 +19,7 @@ const handleSwapClick = () => {
   if (isLocalEnv) { 
     window.location.href = `http://${currentHost}:5175`; 
   } else { 
-    window.location.href = 'https://soltchain.vercel.app/soltswap'; 
+    window.location.href = 'https://ecocreator.vercel.app/soltswap'; 
   } 
 }; 
 // 🎮 SoltHubFun Redirect 
@@ -27,7 +27,7 @@ const handleFunClick = () => {
   if (isLocalEnv) { 
     window.location.href = `http://${currentHost}:5176`; 
   } else { 
-    window.location.href = 'https://soltchain.vercel.app/solthubfun'; 
+    window.location.href = 'https://ecocreator.vercel.app/solthubfun'; 
   } 
 }; 
 return ( 
