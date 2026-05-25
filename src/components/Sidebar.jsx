@@ -16,9 +16,8 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
     if (isLocalEnv) {  
       window.location.href = `http://${currentHost}:5173/`;  
     } else {  
-      window.location.href = 'https://ecocreator.vercel.app/create';   
-    }  
-  };  
+      window.location.href = 'https://ecocreator.vercel.app';   
+     };  
   
   // 🛠️ Soltswap Redirect (Port 5175) 
   const handleSwapClick = () => {  
