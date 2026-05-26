@@ -12,14 +12,14 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
    const handleCreateClick = () => 
     { if (isLocalEnv) { window.location.href = `http://${currentHost}:5173`; 
   } else { 
-    window.location.href = 'https://ecocreator.vercel.app'; 
+    window.location.href = 'https://soltcreator.vercel.app'; 
   } 
 }; // 🛠️ SoltSwap Redirect 
 const handleSwapClick = () => { 
   if (isLocalEnv) { 
     window.location.href = `http://${currentHost}:5175`; 
   } else { 
-    window.location.href = 'https://ecocreator.vercel.app/soltswap'; 
+    window.location.href = 'https://soltcreator.vercel.app/soltswap'; 
   } 
 }; 
 // 🎮 SoltHubFun Redirect 
@@ -27,7 +27,7 @@ const handleFunClick = () => {
   if (isLocalEnv) { 
     window.location.href = `http://${currentHost}:5176`; 
   } else { 
-    window.location.href = 'https://ecocreator.vercel.app/solthubfun'; 
+    window.location.href = 'https://soltcreator.vercel.app/solthubfun'; 
   } 
 }; 
 return ( 

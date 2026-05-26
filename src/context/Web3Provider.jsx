@@ -18,7 +18,7 @@ createAppKit({
   metadata: {
     name: 'SoltHub',
     description: 'Soltchain Ecosystem Hub',
-    url: typeof window !== 'undefined' ? window.location.origin : 'https://ecocreator.vercel.app',
+    url: typeof window !== 'undefined' ? window.location.origin : 'https://soltcreator.vercel.app',
     icons: ['https://avatars.githubusercontent.com/u/177283245']
   }
 })

@@ -9,8 +9,8 @@ export const projectId = '36ab9bad9a38e511fd10489d2f947ceb'
 const metadata = {
   name: 'CyberDice Pro',
   description: 'SoltChain Premium Web3 Gaming',
-  url: 'https://ecocreator.vercel.app',
-  icons: ['https://ecocreator.vercel.app/logo.png']
+  url: 'https://soltcreator.vercel.app',
+  icons: ['https://soltcreator.vercel.app/logo.png']
 }
 
 // Supported chains

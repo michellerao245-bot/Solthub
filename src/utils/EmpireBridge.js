@@ -35,8 +35,8 @@ export const EMPIRE_CONFIG = {
     // 4. Ecosystem Navigation (Redirect Logic)   
     urls: {   
         // Agar phone/local system par hai toh dynamic IP ke sath port 5173 uthaega, production me Vercel/Netlify Live Domain  
-        empire: isLocal? `http://${currentIP}:5173` : "https://ecocreator.vercel.app",   
-        dice: isLocal? `http://${currentIP}:5174` : "https://ecocreator.vercel.app",   
+        empire: isLocal? `http://${currentIP}:5173` : "https://soltcreator.vercel.app",   
+        dice: isLocal? `http://${currentIP}:5174` : "https://soltcreator.vercel.app",   
     }   
 };   
    
