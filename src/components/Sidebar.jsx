@@ -19,7 +19,7 @@ const handleSwapClick = () => {
   if (isLocalEnv) { 
     window.location.href = `http://${currentHost}:5175`; 
   } else { 
-    window.location.href = 'https://soltcreator.vercel.app/soltswap'; 
+    window.location.href = 'https://soltswap.vercel.app'; 
   } 
 }; 
 // 🎮 SoltHubFun Redirect 
@@ -27,7 +27,7 @@ const handleFunClick = () => {
   if (isLocalEnv) { 
     window.location.href = `http://${currentHost}:5176`; 
   } else { 
-    window.location.href = 'https://soltcreator.vercel.app/solthubfun'; 
+    window.location.href = 'https://solthubfun.vercel.app'; 
   } 
 }; 
 return ( 
