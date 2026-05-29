@@ -3,15 +3,12 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
-
   "scripts": {
-  "preinstall": "chmod -R 755 .",
-  "dev": "vite",
-  "build": "npx vite build",
-  "preview": "vite preview"
-},
-
+    "dev": "vite",
+    "build": "vite build"
+  },
   "dependencies": {
+  
     "@reown/appkit": "^1.8.19",
     "@reown/appkit-adapter-wagmi": "^1.8.19",
     "@tanstack/react-query": "^5.100.10",
