@@ -27,7 +27,7 @@ const handleFunClick = () => {
   if (isLocalEnv) { 
     window.location.href = `http://${currentHost}:5176`; 
   } else { 
-    window.location.href = 'https://solthubfun.vercel.app'; 
+    window.location.href = 'https://soltgame.vercel.app'; 
   } 
 }; 
 return ( 
