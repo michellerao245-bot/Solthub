@@ -21,7 +21,15 @@ const handleSwapClick = () => {
   } else { 
     window.location.href = 'https://soltswap.vercel.app'; 
   } 
-}; 
+};
+  // 🛠️ SoltLive Redirect 
+  const handleLiveClick = () => { 
+  if (isLocalEnv) { 
+    window.location.href = `http://${currentHost}:5175`; 
+  } else { 
+    window.location.href = 'https://soltlive.vercel.app'; 
+  } 
+};
 // 🎮 SoltHubFun Redirect 
 const handleFunClick = () => { 
   if (isLocalEnv) { 
@@ -69,7 +77,7 @@ return (
             </div> 
             {/* External AI Tool */}
              <a
-              href="https://soltguard-ai.vercel.app" 
+              href="https://smarttools.vercel.app" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="flex items-center gap-4 px-4 py-3 text-slate-400 hover:bg-cyan-500/10 hover:text-cyan-400 rounded-lg transition-all"
@@ -77,12 +85,12 @@ return (
                <span className="text-xl">
                  <FaShieldAlt />
                   </span>
-                   {isOpen && ( <span className="text-sm font-medium"> Scam Detection </span> )} 
+                   {isOpen && ( <span className="text-sm font-medium"> Smart Tools </span> )} 
                    </a> 
                    {/* Internal Routes */} 
                    <MenuItem to="/whale-tracking" icon={<FaFish />} label="Whale Tracking" isOpen={isOpen} /> 
                    <MenuItem to="/sniping-signals" icon={<FaCrosshairs />} label="Sniping Signals" isOpen={isOpen} /> 
-                   <MenuItem to="/token-analytics" icon={<FaChartBar />} label="Token Analytics" isOpen={isOpen} /> 
+                   <MenuItem to="/token-analytics" icon={<FaChartBar />} label="Live Market" isOpen={isOpen} /> 
                    <MenuItem to="/presale" icon={<FaCoins />} label="Presale" isOpen={isOpen} /> 
                    <MenuItem to="/price-converter" icon={<FaCalculator />} label="Price Converter" isOpen={isOpen} /> 
                    <MenuItem to="/more" icon={<FaEllipsisH />} label="More" isOpen={isOpen} /> 
