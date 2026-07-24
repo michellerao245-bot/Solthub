@@ -57,7 +57,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
         <div onClick={handleLiveClick} className="cursor-pointer"><MenuItemStatic icon={<FaChartBar />} label="Live Market" isOpen={isOpen} /></div>  
         
         <MenuItem to="/presale" icon={<FaCoins />} label="Presale" isOpen={isOpen} />   
-        <MenuItem to="/price-converter" icon={<FaCalculator />} label="Price Converter" isOpen={isOpen} />   
+        <MenuItem to="/price-converter" icon={<FaCalculator />} label="SoltRide" isOpen={isOpen} />   
         <MenuItem to="/more" icon={<FaEllipsisH />} label="More" isOpen={isOpen} />   
         <MenuItem to="/profile" icon={<FaUser />} label="Profile" isOpen={isOpen} />   
       </nav>   
