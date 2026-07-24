@@ -5,11 +5,12 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-   "build": "npx vite build"
+    "build": "npx vite build"
   },
   "dependencies": {
     "@reown/appkit": "^1.8.19",
     "@reown/appkit-adapter-wagmi": "^1.8.19",
+    "@supabase/supabase-js": "^2.110.8",
     "@tanstack/react-query": "^5.100.10",
     "ethers": "^6.16.0",
     "framer-motion": "^11.0.8",
