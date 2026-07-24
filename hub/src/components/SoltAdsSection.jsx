@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { ethers } from 'ethers';
 import { supabase } from '../supabaseClient'; // 🌟 Yahan import path fix kar diya hai
 
-const SOLT_CONTRACT_ADDRESS = "0x6C8942407c65D0f038b04DD5DA3420eC826Cc8d9";
+const SOLT_CONTRACT_ADDRESS = "0x72d8D91a09cABF8DAf26A9f50B85c40095B370fC";
 const ADMIN_WALLET = "0xC30050aBe984c3B3929822E3BbF33fbBE6b3C423";
 
 const SOLT_ABI = [
